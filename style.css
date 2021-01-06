@@ -1,0 +1,102 @@
+@keyframes heading {
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes text {
+	100% {
+		transform: translateX(0);
+	}
+}
+
+:root {
+	/*Defining variables for colors*/
+	--slide-1-color: steelblue;
+	--slide-2-color: tan;
+	--slide-3-color: teal;
+	--slide-4-color: slateblue;
+	--animate-speed: 1.5s;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	color: #fff;
+}
+
+#slide-1 {
+	background-color: var(--slide-1-color, steelblue);
+}
+
+#slide-1 h1 {
+	transform: translateY(-50vh);
+	animation-name: heading;
+	animation-duration: var(--animate-speed);
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+}
+
+#slide-1 p {
+	transform: translateX(-100vw);
+	animation-name: text;
+	animation-duration: var(--animate-speed, 1.5s);
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+	animation-delay: 1s;
+}
+
+/*Assign slide color using this boilerplate code:
+	#slide-n {
+		background-color: var(--variable-for-color, fallback-color);
+	}
+*/
+
+#slide-2 {
+	background-color: var(--slide-2-color, tan);
+}
+#slide-3 {
+	background-color: var(--slide-3-color, teal);
+}
+#slide-4 {
+	background-color: var(--slide-4-color, slateblue);
+}
+.slide {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 4rem;
+}
+
+.slide h1,
+.slide h2 {
+	font-size: 4rem;
+	line-height: 1.2;
+	margin: 1rem;
+}
+.slide p {
+	font-size: 1.3rem;
+}
+
+.btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: #f4f4f4;
+	color: #333;
+	text-decoration: none;
+	border: none;
+	margin-top: 1rem;
+	font-size: 1.1rem;
+	transition: all 0.3s ease-in;
+}
+
+.btn:hover {
+	background-color: #333;
+	color: #fff;
+}
